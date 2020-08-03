@@ -46,20 +46,20 @@ def menu():
 # Show word list function
 def show_list():
   for word, translation in WORD_LIST.items():
-    print("{} = {}".format(word.title(), translation))
+    print(word.title()," is ",translation, "in Maori")
  
 # Translation function
 def translate(word):
   if word in WORD_LIST:
     translation = WORD_LIST[word]
-    print("{} in Maori is {}".format(word.title(), translation))
+    print(translation,"in Maori is",word.title())
   else:
     print("Sorry that word is not in the dictionary")
         
 # Main program
 print("Welcome to the English to Maori dictionary")
-name = input("What is your name?").title()
-print("Hello, {}".format(name))
+name = input("What is your name? ").title()
+print("Hello", name)
  
 # Print menu
 menu()
@@ -69,7 +69,7 @@ repeat = True
 while repeat == True:
  
   # Ask user for input and 
-  option = input("What would you like to do? ").strip()
+  option = input("What would you like to do? ")
  
   # Check input and run the chosen function
   if option == "1":
@@ -78,9 +78,10 @@ while repeat == True:
     show_list()
   elif option == "3":
     word = input("What word would you like to translate? ")
-    translate(word.strip().lower())
+    translate(word.lower())
   elif option == "4":
-    print("Goodbye {}, thanks for using the dictionary!".format(name))
+    print("Goodbye", name,"thanks for using the dictionary!")
     repeat = False
   else:
     print("That wasn't an option")
+
